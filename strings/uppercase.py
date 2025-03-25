@@ -15,7 +15,15 @@ def uppercase(mystring: str) -> str:
 	# loop through string and move each char. 32 steps.
 	# then convert to char using chr (from ord(number))
 	toremove = string.punctuation
-	empty = "".join(chr(ord(chars) - 32) for chars in mystring if ord(chars) >= 32 and chars not in toremove)
+	# empty = "".join(chr(ord(chars) - 32) for chars in mystring if ord(chars) >= 32 and chars not in toremove)
+	empty = ""
+	for chars in mystring:
+		# check if chars is part of toremove
+		if chars in toremove:
+			# add punctuation to empty
+			empty += chars
+		elif ord(chars) >= 32:
+			empty = empty + chr(ord(chars) - 32)
 	return empty
 
 
