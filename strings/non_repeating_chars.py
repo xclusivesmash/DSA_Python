@@ -18,7 +18,8 @@ def non_repeating(string: str) -> str:
 	# 3. loop through string
 	for chars in string:
 		# if char not in dict. store it and increment count
-		myDict[chars] = myDict.get(chars, 1) if chars not in myDict else myDict[chars] + 1 
+		myDict[chars] = myDict.get(chars, 1) if chars not in myDict else myDict[chars] + 1
+		# myDict[chars] = 1 if chars not in myDict else myDict[chars] + 1 / same thing /
 	# 4. check if value associated with key has one.
 	non_repeating_key = None
 	for key, value in myDict.items():
